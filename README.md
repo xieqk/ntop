@@ -1,7 +1,15 @@
 # ntop: Nvidia Top
 
+### 下载
+
+- NVIDIA 20系及前代GPU：[https://github.com/xieqk/ntop/releases/download/v0.1/ntop](https://github.com/xieqk/ntop/releases/download/v0.1/ntop)
+- NVIDIA RTX 30 系显卡，如 RTX 3090：[https://github.com/xieqk/ntop/releases/download/v0.1.3090/ntop](https://github.com/xieqk/ntop/releases/download/v0.1.3090/ntop)
+
+下载好后可直接参考最后的 `使用` 部分查看如何使用。
+
 ### 介绍
-将 nvidia-smi 和 top 整合于一个命令，查看正在使用GPU的进程，并整理输出。
+
+简单写了一个在 Linux 下将 `nvidia-smi` 和 `top` 命令输出整合的一个小工具，查看正在使用GPU的进程，并将相关信息整理输出。
 
 输出内容包括：
 
@@ -32,13 +40,14 @@
 2.  tabulate
 3.  pyinstaller
 
-Conda 安装
+**Conda 安装**
 
 ```bash
 conda install -c conda-forge psutil tabulate pyinstaller
 ```
 
-Pip 安装
+**(或) Pip 安装**
+
 ```bash
 pip install -i https://opentuna.cn/pypi/web/simple psutil tabulate pyinstaller
 ```
@@ -53,9 +62,9 @@ pyinstaller -F ntop.py -n ntop
 pyinstaller -F ntop-3090.py -n ntop
 ```
 
-### 添加环境变量
+### 使用
 
-打包后，可在 `dist` 文件夹中找到可执行程序。将该可执行程序所在目录加入环境变量，即可直接在命令行使用 `ntop` 查看当前 GPU 使用情况。
+打包后，可在 `dist` 文件夹中找到可执行程序，或直接下载发布的可执行文件。将该可执行程序所在目录加入环境变量，即可直接在命令行使用 `ntop` 查看当前 GPU 使用情况。
 
 下例中已将该可执行程序复制到了 `Home` 目录下的 `bin` 文件夹中(`~/bin`)，然后将该目录添加进环境变量如下（一次性）。
 
